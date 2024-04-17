@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+        <div class="popup" style="display: none;">
+            <div class="successPopup">
+                <div class="popupBackground">
+                    <div class="popUpbackgroundMiddle">
+                        <img class="success" alt="Success GIF" id="successGIF">
+                        <div>powered by giphy</div>
+                        <p class="successText">Order(s) successfully sent!</p>
+                        <div class="ButtonsSuccess">
+                            <div class="newOrderButton">Create new order</div>
+                            <div class="closeButton">Close</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="background-loading"></div>
+            </div>
+        </div>
+        <div class="loading-wrapper">
+            <div class="loading-text-wrapper">
+                <div class="loader"></div>
+                <div class="loading-Text dots">Please wait while the orders are sent to OTM...</div>
+            </div>
+            <div class="background-loading"></div>
+        </div>
+
+        <div class="sidebar">
+            <div class="logoContainer">
+                <img src="./images/OCS-logo-12.png" class="OCSLogo">
+                <div class="OCSLogo-Title">OCS</div>
+            </div>
+            <hr>
+            <div class="mainSidebar">
+                <div class="mainTitle">Title</div>
+                <ul>
+                    
+                    <div class="sidebarList">
+                        <a href="http://127.0.0.1:5500/index.html"><li>><i class="fas fa-home"></i> Home</li></a>
+                        <a href="http://127.0.0.1:5500/order.html"><li>><i class="fas fa-users"></i> Order</li></a>
+                        <li>><i class="fas fa-cogs"></i> Test</li>
+                        <li>><i class="fas fa-envelope"></i> Test</li>
+                    </div>
+                    
+                </ul>
+            </div>
+            <hr>
+            <div class="mainSidebar">
+                <div class="mainTitle">Title</div>
+                <ul>
+                    
+                    <div class="sidebarList">
+                        <li>><i class="fas fa-home"></i> Test</li>
+                        <li>><i class="fas fa-users"></i> Test</li>
+                        <li>><i class="fas fa-cogs"></i> Test</li>
+                        <li>><i class="fas fa-envelope"></i> Test</li>
+                    </div>
+                    
+                </ul>
+            </div>
+            <hr>
+            <div class="mainSidebar">
+                <div class="mainTitle">Title</div>
+                <ul>
+                    
+                    <div class="sidebarList">
+                        <li>><i class="fas fa-home"></i> Test</li>
+                        <li>><i class="fas fa-users"></i> Test</li>
+                        <li>><i class="fas fa-cogs"></i> Test</li>
+                        <li>><i class="fas fa-envelope"></i> Test</li>
+                    </div>
+                    
+                </ul>
+            </div>
+            <hr>
+            <div class="mainSidebar">
+                <div class="mainTitle">Title</div>
+                <ul>
+                    
+                    <div class="sidebarList">
+                        <li>><i class="fas fa-home"></i> Test</li>
+                        <li>><i class="fas fa-users"></i> Test</li>
+                        <li>><i class="fas fa-cogs"></i> Test</li>
+                        <li>><i class="fas fa-envelope"></i> Test</li>
+                    </div>
+                    
+                </ul>
+            </div>
+            <hr>
+            
+        </div>
+        
+            <div class="orderName">Order Name - Client</div>
+            <div class="Buttons">
+                <div class="removeButton">Remove</div>
+                <div class="sendButton">Send to OTM</div>
+            </div>
+            <div class="dragFieldView">
+                <div class="dragField">
+                    <div class="fieldHeader">
+                        <div class="headerTitleBackground"><a href="http://127.0.0.1:5500/order.html"><div class="headerTitle">Mandatory fields</div></a></div>
+                        <div class="headerTitleBackground"><a href="http://127.0.0.1:5500/OCinformation.html"><div class="headerTitle">Order / Contact information</div></a></div>
+                        <div class="headerTitleBackground"><a href="http://127.0.0.1:5500/Loading.html"><div class="headerTitle selected">Loading information</div></a></div>
+                        <div class="headerTitleBackground"><a href="http://127.0.0.1:5500/unloading.html"><div class="headerTitle">Unloading information</div></a></div>
+                        <div class="headerTitleBackground"><a href="http://127.0.0.1:5500/goods.html"><div class="headerTitle">Goods</div></a></div>
+                        <div class="headerTitleBackground"><a href="http://127.0.0.1:5500/goodsInformation.html"><div class="headerTitle">Goods Information</div></a></div>
+                        <div class="headerTitleBackground"><a href="http://127.0.0.1:5500/truck.html"><div class="headerTitle">Truck</div></a></div>
+                    </div>
+                    <hr class="medium-width">
+                    <div class="fields">
+                        <div class="unmappedFields">
+                            <div class="unmappedFieldsTitle">Unmapped fields</div>
+                            <hr class="fieldBorder">
+                            <div class="Orderinfo">
+                                <div class="unmappedFieldsView">
+                                    <div class="fieldValueBorder">
+                                        <div class="unmappedTitle">Loading information</div>
+                                        <div class="unmappedTitle">4 &#9660;</div>
+                                    </div>
+                                </div>
+                                <hr class="medium-small">
+                            </div>
+                            <div class="panel">
+                                <div class="panelWrap">
+                                    <div class="orderBubble big" draggable="true" ondragstart="drag(event)"></div>
+                                    <div class="orderBubble big" draggable="true" ondragstart="drag(event)"></div>
+                                    <div class="orderBubble big" draggable="true" ondragstart="drag(event)"></div>
+                                    <div class="orderBubble big" draggable="true" ondragstart="drag(event)"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mappedFields">
+                            <div class="unmappedFieldsTitle">Mapped fields</div>
+                            <hr class="fieldBorder">
+                            <div class="Orderinfo">
+                                <div class="unmappedFieldsView">
+                                    <div class="fieldValueBorder">
+                                        <div class="unmappedTitle">Loading information</div>
+                                        <div class="unmappedTitle"> &#9660;</div>
+                                    </div>
+                                </div>
+                                <hr class="medium-small">
+                            </div>
+                            <div class="panel">
+                                <div class="panelWrap">
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Name </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Street + housenumber</div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Country code </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">City </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Postal code</div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Req. loading date from</div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Req. loading time </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Req. loading date until </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Req. loading time until </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Slotbooking required </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext">Neutral loading required </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                    <div class="orderBubbleWrap" draggable="true" ondragstart="drag(event)">
+                                        <div class="orderBubbleTitle bigtext"> Loading reference </div>
+                                        <div class="orderBubble big"><div class="orderBubbleText bigtext"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                    
+                </div>
+            </div>
+        
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script>
+            var acc = document.getElementsByClassName("Orderinfo");
+            var i;
+        
+            // Function to toggle the accordion
+            function toggleAccordion() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            }
+        
+            // Loop through each accordion element
+            for (i = 0; i < acc.length; i++) {
+                // Add event listener to toggle accordion on click
+                acc[i].addEventListener("click", toggleAccordion);
+        
+                // Trigger the click event on each accordion element
+                toggleAccordion.call(acc[i]);
+            }
+        </script>
+        
+            <script>
+                // Fetching the JSON file
+                fetch('Table-Order-Request.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Extracting the Goods section from the JSON
+                    const goodsData = data['Loading information'];
+                    
+                    // Selecting the order bubble titles
+                    const orderBubbleTitles = document.querySelectorAll('.orderBubbleTitle');
+                    
+                    // Looping through each order bubble title
+                    orderBubbleTitles.forEach((title) => {
+                        // Matching the order bubble title with the corresponding property in the Goods section
+                        const property = title.textContent.trim();
+                        
+                        // Finding the corresponding value in the JSON data
+                        const value = goodsData[0][property];
+                        
+                        // Selecting the corresponding order bubble text
+                        const orderBubbleText = title.nextElementSibling.querySelector('.orderBubbleText');
+                        
+                        // Filling the order bubble text with the property name and its corresponding value
+                        orderBubbleText.innerHTML = `<strong>${property}:</strong> ${value}`;
+                        
+                        // Logging the match
+                        console.log(`Order bubble title "${property}" matches property "${property}" in the JSON. Value: "${value}"`);
+                    });
+                })
+                .catch(error => console.error('Error fetching JSON:', error));
+            </script>
+
+            <script>
+                document.querySelector('.sendButton').addEventListener('click', function() {
+                    // Show loading animation and background overlay
+                    document.querySelector('.loading-wrapper').style.display = 'block';
+
+                    // Send data to OTM
+                    fetch('http://127.0.0.1:5000/send_to_OTM', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            // Add any data you want to send to the server here
+                        })
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            console.log('Data sent to OTM successfully.');
+                            // Fetch random success popup
+                            displayRandomSuccessPopup();
+                        } else {
+                            console.error('Error sending data to OTM.');
+                            // Hide loading animation and background overlay in case of error
+                            document.querySelector('.loading-wrapper').style.display = 'none';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error sending data to OTM:', error);
+                        // Hide loading animation and background overlay in case of error
+                        document.querySelector('.loading-wrapper').style.display = 'none';
+                    });
+                });
+
+                // Function to fetch a random GIF from Giphy API and display it in the popup
+                function displayRandomSuccessPopup() {
+                    // Fetch random GIF from Giphy API
+                    fetchRandomGIF();
+                }
+
+                function fetchRandomGIF() {
+                    // Fetch random GIF from Giphy API
+                    fetch('https://api.giphy.com/v1/gifs/random?api_key=odYrTK3MzVEMvQxg6AJDdGIyfaVhylGB&tag=success&rating=g')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Log the entire response data for debugging
+                        console.log('API Response:', data);
+
+                        // Extract GIF URL from the response data
+                        const gifURL = data.data.images.original.url;
+
+                        // Log the GIF URL to the console for debugging
+                        console.log('GIF URL:', gifURL);
+
+                        // Display the fetched GIF in the popup
+                        document.getElementById('successGIF').src = gifURL;
+
+                        // Hide loading animation and background overlay
+                        document.querySelector('.loading-wrapper').style.display = 'none';
+
+                        // Show the success popup
+                        document.querySelector('.popup').style.display = 'block';
+                    })
+                    .catch(error => {
+                        console.error('Error fetching random GIF:', error);
+
+                        // Hide loading animation and background overlay in case of error
+                        document.querySelector('.loading-wrapper').style.display = 'none';
+                    });
+                }
+            </script>
+
+            <script>
+                // Function to close the success popup
+                function closeSuccessPopup() {
+                    document.querySelector('.popup').style.display = 'none';
+                }
+
+                // Function to navigate to a specific page and close the success popup
+                function goToNewOrderPage() {
+                    // Redirect to a specific page
+                    window.location.href = 'http://127.0.0.1:5500/index.html';
+                }
+
+                // Add event listener to the close button
+                document.querySelector('.closeButton').addEventListener('click', closeSuccessPopup);
+
+                // Add event listener to the new order button
+                document.querySelector('.newOrderButton').addEventListener('click', goToNewOrderPage);
+            </script>
+</body>
+</html>

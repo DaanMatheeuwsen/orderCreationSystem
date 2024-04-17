@@ -1,0 +1,83 @@
+{
+  "Order Information": [
+    {
+      "Booking Number": 602121,
+      "Agreed Tariff": 900,
+      "Invoice Reference": 50000
+    }
+  ],
+  "Contact Information BILL-TO": [
+    {
+      "Company Name": "Daan BV",
+      "Contact Person": 900,
+      "E-mail Address": "Test@test123.com",
+      "Phone Number": "Test"
+    }
+  ],
+  "Loading information": [
+    {
+      "Name": "Vogten Staal",
+      "Street + housenumber": "Test 02",
+      "Country code": "NL",
+      "Postal code": 6222,
+      "City": "Test",
+      "Req. loading date from": "2024-05-28",
+      "Req. loading time": "12:30:00",
+      "Req. loading date until": 0,
+      "Req. loading time until": 0,
+      "Slotbooking required": "NO",
+      "Neutral loading required": "NO",
+      "Loading reference": 55555
+    }
+  ],
+  "Unloading Information": [
+    {
+      "Name": "Vetter Stahlhandel",
+      "Street + housenumber": "Test 02",
+      "Country code": "DE",
+      "Postal code": 27612,
+      "City": "Loxstedt",
+      "Req. unloading date from": "2024-05-28",
+      "Req. unloading time": "13:30:00",
+      "Req. unloading date until": 0,
+      "Req. unloading time until": 0,
+      "Slotbooking required": "NO",
+      "Neutral unloading required": "NO",
+      "Unloading reference": 55555
+    }
+  ],
+  "Goods": [
+    {
+      "Quantity": 3,
+      "Ship unit": "FTL",
+      "Weight": 1200,
+      "Total weight": 3600.0,
+      "Length": 1.2,
+      "Width": 0.8,
+      "Height": 2.3,
+      "Stackable": "No",
+      "Description": "Test"
+    }
+  ],
+  "Goods-Information": [
+    {
+      "Palletexchange": "YES",
+      "ADR": "NO",
+      "ADR code": 0,
+      "A-sign / waste registration": "No",
+      "Safety equipment": "No",
+      "Insurance next to CMR conditions": "No",
+      "Temperature": "No",
+      "Min. Temp": 0,
+      "Max. temp": 0
+    }
+  ],
+  "Truck": [
+    {
+      "Trailer type": "COMBI-TRAILER",
+      "Load/Unloading information": "FROM BOTH SIDES AND THE TOP LOADING AND UNLOADING",
+      "Licenseplate required": "No",
+      "Remark": 0
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="fields">
+        <div class="unmappedFields">
+            <div class="unmappedFieldsTitle">Unmapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Order information</div>
+                        <div class="unmappedTitle">4 &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                </div>
+            </div>
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Contact information</div>
+                        <div class="unmappedTitle">4 &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                </div>
+            </div>
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Loading information</div>
+                        <div class="unmappedTitle">2 &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                </div>
+            </div>
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Unloading information</div>
+                        <div class="unmappedTitle">0 &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+
+            </div>
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Goods</div>
+                        <div class="unmappedTitle">0 &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                </div>
+            </div>
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Trucks</div>
+                        <div class="unmappedTitle">0 &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                
+            </div>
+        </div>
+        <div class="mappedFields">
+            <div class="unmappedFieldsTitle">Mapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo" data-property="Order Information">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Order information / Contact information</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Booking number</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Booking Number"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Invoice reference </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Invoice Reference"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Company name </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Company Name"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Contact person </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Contact Person"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">E-mail address </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="E-mail Address"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Phone Number </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Phone Number"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Orderinfo" data-property="Loading Information">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Loading information</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel" id="loading-panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Loading address </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Loading address"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Loading date </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Loading date"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Loading Postalcode</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Loading Postal code"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Loading reference </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Loading reference"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Orderinfo" data-property="Unloading Information">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Unloading information</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel" id="unloading-panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Unloading date </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Unloading date"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Unloading Postalcode </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Unloading Postal code"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Unloading reference </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Unloading reference"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Unloading address </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Unloading address"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Orderinfo" data-property="Goods Information">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Goods</div>
+                        <div class="unmappedTitle">&#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Quantity </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Quantity"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Ship unit</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Ship unit"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Weight per ship unit</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Weight"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Length </div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Length"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Width</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Width"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Height</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Height"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Description</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Description"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Orderinfo" data-property="Truck">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle">Trucks</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Trailer type</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Trailer type"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle">Load/Unloading information</div>
+                        <div class="orderBubble">
+                            <div class="orderBubbleText" data-property="Load/Unloading information"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("Orderinfo");
+        var i;
+
+        // Function to toggle the accordion
+        function toggleAccordion() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        }
+
+        // Loop through each accordion element
+        for (i = 0; i < acc.length; i++) {
+            // Add event listener to toggle accordion on click
+            acc[i].addEventListener("click", toggleAccordion);
+
+            // Trigger the click event on each accordion element
+            toggleAccordion.call(acc[i]);
+        }
+    </script>
+    
+    <script type="module">
+        import Draggable from 'https://cdn.jsdelivr.net/npm/@shopify/draggable/build/esm/Draggable/Draggable.mjs';
+        import Swappable from 'https://cdn.jsdelivr.net/npm/@shopify/draggable/build/esm/Swappable/Swappable.mjs';
+        const swappable = new Swappable(document.querySelectorAll('.panelWrap'), {
+            draggable: '.orderBubble',
+        });
+    </script>
+
+<script>
+    fetch('./output/Order_Folder/Multiple-orders.json')
+        .then(response => response.json())
+        .then(data => {
+            // Extracting the Loading Information section from the JSON
+            const loadingData = data;
+
+            console.log(loadingData);
+
+            // Selecting the order bubble titles for the Loading Information section
+            const orderBubbleTitles = document.querySelectorAll('.orderBubbleTitle');
+
+            // Looping through each order bubble title
+            orderBubbleTitles.forEach((title) => {
+                // Matching the order bubble title with the corresponding property in the Loading Information section
+                const property = title.textContent.trim();
+
+                console.log('Property:', property);
+
+                // Finding the corresponding value in the JSON data
+                const valueObj = loadingData[property];
+                if (valueObj) {
+                    const value = valueObj['value'];
+                    const company_phrasing = valueObj['company_phrasing'];
+
+                    // Selecting the corresponding order bubble text
+                    const orderBubbleText = title.nextElementSibling.querySelector('.orderBubbleText');
+
+                    // Filling the order bubble text with the property name and its corresponding value
+                    orderBubbleText.innerHTML = `<strong>${company_phrasing}:</strong> ${value}`;
+
+                    // Logging the match
+                    console.log(`Order bubble title "${property}" matches property "${property}" in the JSON. Value: "${value}"`);
+                } else {
+                    // If value is not found, keep orderBubbleText empty
+                    const orderBubbleText = title.nextElementSibling.querySelector('.orderBubbleText');
+                    orderBubbleText.innerHTML = '';
+                }
+            });
+
+            // Finding unmapped fields and displaying them
+            const unmappedFieldsPanel = document.querySelector('.unmappedFields .panelWrap');
+
+            Object.keys(loadingData).forEach(property => {
+                if (property.includes('Unknown_value')) {
+                    const value = loadingData[property].value;
+                    const fieldElement = document.createElement('div');
+                    fieldElement.classList.add('orderBubbleWrap');
+                    fieldElement.innerHTML = `
+                        <div class="orderBubble">
+                            <div class="orderBubbleText">${loadingData[property].company_phrasing}: ${value}</div>
+                        </div>
+                    `;
+                    unmappedFieldsPanel.appendChild(fieldElement);
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching JSON:', error));
+</script>
+
+
+
+
+</body>
+
+</html>

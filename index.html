@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logoContainer">
+            <img src="./images/OCS-logo-12.png" class="OCSLogo">
+            <div class="OCSLogo-Title">OCS</div>
+        </div>
+        <hr>
+        <div class="mainSidebar">
+            <div class="mainTitle">Order Entry</div>
+            <div class="sidebarList">
+                <a href="http://127.0.0.1:5500/index.html">
+                    <div class="sidebarText"><i class="fas fa-plus"></i> Create</div>
+                </a>
+                <a href="http://127.0.0.1:5500/generalpage.html">
+                    <div class="sidebarText"><i class="fas fa-file-alt"></i> Current order</div>
+                </a>
+                <a href="http://127.0.0.1:5500/blankTemplate.html">
+                    <div class="sidebarText"><i class="fas fa-file"></i>Blank Template</div>
+                </a>
+                <a href="http://127.0.0.1:5500/outlookImport.html">
+                    <div class="sidebarText"><i class="fas fa-envelope"></i>Outlook import</div>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="mainSidebar">
+            <div class="mainSidebar">
+                <div class="mainTitle">Statusses</div>
+                <div class="sidebarList">
+                    <a href="http://127.0.0.1:5500/exceptions.html">
+                        <div class="sidebarText"><i class="fas fa-file-excel"></i>Exceptions</div>
+                    </a>
+                    <a href="http://127.0.0.1:5500/progressBar.html">
+                        <div class="sidebarText"><i class="fas fa-truck"></i>Progress bar</div>
+                    </a>
+                    <a href="">
+                        <div class="sidebarText"><i class="fas fa-history"></i>Order history</div>
+                    </a>
+                </div>
+            </div>
+            <br /><br /><br />
+        </div>
+        <hr>
+
+    </div>
+
+    <div class="excelImport">
+        <label for="fileInput">
+            <div class="importSquare">
+                <img src="./images/import.png" class="importIcon">
+                <div class="importText">Import Excel File(s)</div>
+            </div>
+        </label>
+        <input type="file" id="fileInput" style="display: none;" multiple accept=".xlsx,.xls">
+        <progress id="progressBar" value="0" max="100" style="display: none;"></progress>
+        <div id="status" style="display: none;"></div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function () {
+            uploadFile(); // Call uploadFile() when the file input changes
+        });
+
+
+    </script>
+</body>
+
+</html>

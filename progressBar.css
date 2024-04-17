@@ -1,0 +1,218 @@
+.progress-bar__wrapper {
+    width: 2560px;
+    height: 1240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .progress-bar__value {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    gap: 8px;
+    margin-bottom: 80px;
+  }
+  progress {
+    width: 50%;
+    height: 150px;
+    border-radius: 50px;
+    background-color: #ddd;
+    transition: width 300ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  progress[value]::-webkit-progress-bar {
+    display: flex;
+    border-radius: 50px;
+    background-color: #a5a5a5;
+    transition: width 300ms ease;
+  }
+  progress[value]::-webkit-progress-value {
+    width: 0;
+    border-radius: 50px;
+    background-color: #49e4fc;
+    transition: width 300ms ease;
+  }
+  
+  .truck {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    margin-top: 392px;
+    margin-left: 1500px;
+    margin-bottom: 140px;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .progressText {
+    margin-top: 40px;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: white;
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+.progress-container {
+  width: 100%;
+  height: 60%;
+	margin-top: 15rem;
+	padding: 0px 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.progress-decoration {
+  position: absolute; /* Position the decorations relative to the container */
+  top: 30%; /* Align the decorations vertically in the middle */
+  left: 93%; /* Align the decorations horizontally in the middle */
+  transform: translate(-50%, -50%); /* Center the decorations */
+  display: flex;
+  text-align: center; /* Center the decoration horizontally */
+  margin-bottom: 250px;
+}
+
+.progress-decoration-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-decoration svg {
+  position: relative;
+  fill: rgba(255, 255, 255, 0.7);
+}
+.progress-decoration .icon-cloud {
+  fill: rgba(173, 194, 240, 0.4);
+}
+.progress-decoration #cloud-one {
+  right: 6vw;
+  top: -12vh;
+}
+.progress-decoration #cloud-two {
+  right: 32vw;
+  top: -8vh;
+}
+.progress-decoration #cloud-three {
+  right: 72vw;
+  top: -12vh;
+}
+.progress-decoration #tree-one {
+  bottom: 0;
+  right: 80vw;
+}
+.progress-decoration #tree-two {
+  bottom: 0;
+  right: 20vw;
+}
+.progress-decoration #lamp-one {
+  bottom: 0;
+  right: 54vw;
+}
+.progress-decoration #lamp-two {
+  bottom: 0;
+  right: 0;
+}
+.progress-bar {
+	background-color: transparent;
+	border: 3px #f4f4f4 solid;
+	border-radius: 20px;
+	position: relative;
+	margin: 4px 0 16px 0;
+	height: 180px;
+	width: 70%;
+}
+.progress-bar .completed-bar {
+	background: linear-gradient(to bottom, #45be3a, #6ae95f);
+	border-radius: 20px;
+	color: #f4f4f4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: width 2s ease 0.4s;
+	padding: 0 8px;
+}
+.progress-bar .completed-bar__truck {
+  font-size: 4rem; /* Adjust the size of the truck icon */
+  margin-left: 8px; /* Adjust the margin for better alignment */
+}
+
+.progress-bar .completed-bar__dashed {
+  width: 90%; /* Adjust the width of the dashed stripes */
+  border: 3px dashed #ffffff; /* Adjust the border width and style */
+}
+
+.progress-information {
+	display: none;
+	justify-content: space-between;
+	padding: 0 4px;
+}
+.icon-cloud {
+	height: 50px;
+	width: 50px;
+}
+.icon-lamp {
+	height: 70px;
+	width: 60px;
+}
+.icon-tree--one {
+	height: 60px;
+	width: 60px;
+}
+.icon-tree--two {
+	height: 70px;
+	width: 60px;
+}
+p {
+	font-family: "Poppins", "Helvetica", "sans-serif";
+	letter-spacing: 1px;
+	line-height: 1.5;
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	margin-top: 0;
+	margin-bottom: 1rem;
+	font-weight: 300;
+	font-size: 1rem;
+	color: rgba(48, 48, 48, 0.6);
+}
+@media only screen and (max-width: 576px) {
+	.progress-container {
+		padding: 0px 16px;
+	}
+	.progress-decoration {
+		display: none;
+	}
+	.progress-information {
+		display: flex;
+	}
+	.progress-bar {
+		margin-bottom: 4px;
+	}
+	.progress-bar .completed-bar__dashed {
+		width: 96%;
+		border: 1px dashed #ffffff;
+	}
+	.progress-bar .completed-bar__truck {
+		font-size: 1rem;
+		margin-left: 0;
+	}
+}

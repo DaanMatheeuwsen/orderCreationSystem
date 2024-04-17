@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="fields">
+        <div class="mappedFields">
+            <div class="unmappedFieldsTitle">Mapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle bigText">Goods</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Quantity </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Ship unit</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Weight</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Total weight</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Length </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Width </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Height</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext optionalText">Stackable</div>
+                        <div class="orderBubble big optional">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Description</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext" contenteditable="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the accordion
+        function toggleAccordion() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        }
+    
+        // Loop through each accordion element
+        var acc = document.getElementsByClassName("Orderinfo");
+        for (var i = 0; i < acc.length; i++) {
+            // Add event listener to toggle accordion on click
+            acc[i].addEventListener("click", toggleAccordion);
+    
+            // Trigger the click event on each accordion element
+            toggleAccordion.call(acc[i]);
+        }
+    
+        // Add event listener to orderBubbleText elements to change parent orderBubble color when focused
+        var orderBubbleTextElements = document.querySelectorAll('.orderBubbleText');
+        orderBubbleTextElements.forEach(function (element) {
+            element.addEventListener('focus', function () {
+                // Add 'editable' class to the parent orderBubble element
+                this.closest('.orderBubble').classList.add('editable');
+            });
+            element.addEventListener('blur', function () {
+                // Remove 'editable' class from the parent orderBubble element
+                this.closest('.orderBubble').classList.remove('editable');
+            });
+        });
+    
+        // Add event listener to document to handle clicks outside orderBubbleText elements
+        document.addEventListener('click', function (event) {
+            var target = event.target;
+            // Check if the clicked element is not an orderBubbleText element
+            if (!target.matches('.orderBubbleText')) {
+                // Remove 'editable' class from all orderBubble elements
+                var orderBubbleElements = document.querySelectorAll('.orderBubble');
+                orderBubbleElements.forEach(function (element) {
+                    element.classList.remove('editable');
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

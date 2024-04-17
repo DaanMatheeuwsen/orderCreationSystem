@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="progressBar.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="progressBackground">
+        <div class="sidebar">
+            <div class="logoContainer">
+                <img src="./images/OCS-logo-12.png" class="OCSLogo">
+                <div class="OCSLogo-Title">OCS</div>
+            </div>
+            <hr>
+            <div class="mainSidebar">
+                <div class="mainTitle">Order Entry</div>
+                <div class="sidebarList">
+                    <a href="http://127.0.0.1:5500/index.html">
+                        <div class="sidebarText"><i class="fas fa-plus"></i> Create</div>
+                    </a>
+                    <a href="http://127.0.0.1:5500/generalpage.html">
+                        <div class="sidebarText"><i class="fas fa-file-alt"></i> Current order</div>
+                    </a>
+                    <a href="http://127.0.0.1:5500/blankTemplate.html">
+                        <div class="sidebarText"><i class="fas fa-file"></i>Blank Template</div>
+                    </a>
+                    <a href="http://127.0.0.1:5500/outlookImport.html">
+                        <div class="sidebarText"><i class="fas fa-envelope"></i>Outlook import</div>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="mainSidebar">
+                <div class="mainSidebar">
+                    <div class="mainTitle">Statusses</div>
+                    <div class="sidebarList">
+                        <a href="http://127.0.0.1:5500/exceptions.html">
+                            <div class="sidebarText"><i class="fas fa-file-excel"></i>Exceptions</div>
+                        </a>
+                        <a href="http://127.0.0.1:5500/progressBar.html">
+                            <div class="sidebarText"><i class="fas fa-truck"></i>Progress bar</div>
+                        </a>
+                        <a href="http://127.0.0.1:5500/orderHistory.html">
+                            <div class="sidebarText"><i class="fas fa-history"></i>Order history</div>
+                        </a>
+                    </div>
+                </div>
+                <br /><br /><br />
+            </div>
+            <hr>
+        </div>
+        <!-- <div class="truck">
+            <img class="truckImage" src="./images/truck2.png">
+        </div>
+        <div class="progressBar">
+            <div class="progress-bar__wrapper">
+                <label class="progress-bar__value" htmlFor="progress-bar"> 80% </label>
+                <progress id="progress-bar" value="80" max="100"></progress>
+                <div class="progressText">Order goal today: 50
+                </div>
+            </div>
+            
+        </div> -->
+
+        <!-- This script got from www.devanswer.com -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+        <div class="progress-container">
+            <div class="progress-decoration-wrapper">
+                <div class="progress-decoration">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;"
+                        viewBox="0 0 750 200" x="700px" y="0px" fill-rule="evenodd" clip-rule="evenodd" class="icon-cloud"
+                        , id="cloud-one">
+                        <g>
+                            <path class="fil0"
+                                d="M100 112c16,-24 43,-40 72,-42 20,-47 70,-76 121,-69 61,7 105,62 101,123 31,16 49,48 49,83 0,52 -42,94 -94,94l-254 0c-53,0 -95,-42 -95,-94 0,-55 46,-98 100,-95zm-80 95c0,41 33,74 75,74l254 0c41,0 74,-33 74,-74 0,-29 -16,-56 -43,-68 -4,-2 -7,-6 -6,-11 6,-52 -30,-101 -83,-107 -45,-6 -87,20 -103,62 -1,4 -5,7 -9,7 -27,0 -52,14 -65,38 -2,3 -5,5 -10,5 -44,-6 -84,29 -84,74z" />
+                        </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;"
+                        viewBox="0 0 450 200" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd" class="icon-cloud"
+                        , id="cloud-two">
+                        <g>
+                            <path class="fil0"
+                                d="M100 112c16,-24 43,-40 72,-42 20,-47 70,-76 121,-69 61,7 105,62 101,123 31,16 49,48 49,83 0,52 -42,94 -94,94l-254 0c-53,0 -95,-42 -95,-94 0,-55 46,-98 100,-95zm-80 95c0,41 33,74 75,74l254 0c41,0 74,-33 74,-74 0,-29 -16,-56 -43,-68 -4,-2 -7,-6 -6,-11 6,-52 -30,-101 -83,-107 -45,-6 -87,20 -103,62 -1,4 -5,7 -9,7 -27,0 -52,14 -65,38 -2,3 -5,5 -10,5 -44,-6 -84,29 -84,74z" />
+                        </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" version="1.1"
+                        style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;"
+                        viewBox="0 0 450 200" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd" class="icon-cloud"
+                        , id="cloud-three">
+                        <g>
+                            <path class="fil0"
+                                d="M100 112c16,-24 43,-40 72,-42 20,-47 70,-76 121,-69 61,7 105,62 101,123 31,16 49,48 49,83 0,52 -42,94 -94,94l-254 0c-53,0 -95,-42 -95,-94 0,-55 46,-98 100,-95zm-80 95c0,41 33,74 75,74l254 0c41,0 74,-33 74,-74 0,-29 -16,-56 -43,-68 -4,-2 -7,-6 -6,-11 6,-52 -30,-101 -83,-107 -45,-6 -87,20 -103,62 -1,4 -5,7 -9,7 -27,0 -52,14 -65,38 -2,3 -5,5 -10,5 -44,-6 -84,29 -84,74z" />
+                        </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" x="0px" y="0px"
+                        class="icon-lamp" , id="lamp-one">
+                        <title>117all</title>
+                        <path
+                            d="M46.63,93.53H40.38V71.14a2,2,0,0,0-2-2H35.26V8.47a2,2,0,0,1,2-2H59.51a2,2,0,0,1,2,2V16A14.74,14.74,0,0,0,48.67,30.58a2,2,0,0,0,2,2h5.62A7.17,7.17,0,0,0,63,37.29h.75a7.17,7.17,0,0,0,6.72-4.71h5.64a2,2,0,0,0,2-2A14.74,14.74,0,0,0,65.51,16V8.47a6,6,0,0,0-6-6H37.26a6,6,0,0,0-6,6V69.14H28.13a2,2,0,0,0-2,2V93.53H19.88v4H46.63ZM63.76,33.29H63a3.14,3.14,0,0,1-2-.71h4.69A3.14,3.14,0,0,1,63.76,33.29Zm10.17-4.71H52.85a10.73,10.73,0,0,1,21.08,0Zm-37.55,65H30.13V73.14h6.25Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Слой 1" viewBox="0 0 100 100" x="0px" y="0px"
+                        class="icon-tree--one" , id="tree-one">
+                        <title>tree_3</title>
+                        <path
+                            d="M79.41,69.35V10.53H20.59V69.35H48V89.94H39.58a2,2,0,0,0,0,4H60.42a2,2,0,0,0,0-4H52V69.35Zm-54.82-4V14.53H75.41V65.35H52V47.55l9-9a2,2,0,0,0-2.83-2.83L52,41.89V27.08a2,2,0,0,0-4,0V50.53L42.07,44.6a2,2,0,0,0-2.83,2.83L48,56.18v9.17Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 100" x="0px" y="0px"
+                        class="icon-lamp" , id="lamp-one">
+                        <title>117all</title>
+                        <path
+                            d="M46.63,93.53H40.38V71.14a2,2,0,0,0-2-2H35.26V8.47a2,2,0,0,1,2-2H59.51a2,2,0,0,1,2,2V16A14.74,14.74,0,0,0,48.67,30.58a2,2,0,0,0,2,2h5.62A7.17,7.17,0,0,0,63,37.29h.75a7.17,7.17,0,0,0,6.72-4.71h5.64a2,2,0,0,0,2-2A14.74,14.74,0,0,0,65.51,16V8.47a6,6,0,0,0-6-6H37.26a6,6,0,0,0-6,6V69.14H28.13a2,2,0,0,0-2,2V93.53H19.88v4H46.63ZM63.76,33.29H63a3.14,3.14,0,0,1-2-.71h4.69A3.14,3.14,0,0,1,63.76,33.29Zm10.17-4.71H52.85a10.73,10.73,0,0,1,21.08,0Zm-37.55,65H30.13V73.14h6.25Z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 100 100" version="1.1" x="0px" y="0px" class="icon-tree--two" , id="tree-two">
+                        <title>10</title>
+                        <desc>Created with Sketch.</desc>
+                        <g stroke-width="1">
+                            <g fill="inherit">
+                                <path
+                                    d="M78.3178384,80.1582938 C77.4943616,81.3442214 76.1982095,82.0241662 74.7612688,82.0241662 L51.9492257,82.0241662 L51.9492257,74.0305435 L63.9020218,65.3681677 C64.7761981,64.7347567 64.9747062,63.5075966 64.3456424,62.6275756 C63.7167737,61.7477509 62.4984258,61.5474783 61.6238595,62.1808893 L51.9492257,69.1921949 L51.9492257,51.0255131 L59.8253924,45.3177461 C60.6993737,44.6843352 60.8980767,43.4573714 60.268818,42.577154 C59.6401442,41.6973293 58.4217964,41.4968604 57.5470351,42.1304677 L51.9492257,46.1871645 L51.9492257,34.898666 C51.9492257,33.8142492 51.0762194,32.9352099 49.9992451,32.9352099 C48.9224659,32.9352099 48.0492645,33.8142492 48.0492645,34.898666 L48.0492645,58.5506552 L38.5306292,51.6522484 C37.6568429,51.0186411 36.4381051,51.2189136 35.8088463,52.0987383 C35.1795876,52.9789557 35.3782906,54.2059194 36.2522719,54.8393304 L48.0492645,63.3890039 L48.0492645,82.0241662 L25.2385865,82.0241662 C23.8018408,82.0241662 22.5054937,81.3442214 21.6822119,80.1584902 C20.8589301,78.9725627 20.6697819,77.5131257 21.163127,76.1542177 L46.49786,6.39203151 C47.1579284,4.57446015 48.7397527,3.92691231 49.9998301,3.92691231 C51.2601026,3.92691231 52.8421219,4.57446015 53.5019953,6.39203151 L78.8367282,76.1542177 C79.3300733,77.5131257 79.1411202,78.9725627 78.3178384,80.1582938 M82.4993768,74.805716 L57.1646439,5.04352982 C56.0521799,1.97975284 53.2399179,0 49.9998301,0 C46.7601324,0 43.9476754,1.97975284 42.8352114,5.04352982 L17.5004785,74.805716 C16.5773577,77.347999 16.945709,80.1901018 18.4858037,82.4084146 C20.0258983,84.6267274 22.5505382,85.9510785 25.2385865,85.9510785 L48.0492645,85.9510785 L48.0492645,98.0365438 C48.0492645,99.1209607 48.9224659,100 49.9992451,100 C51.0762194,100 51.9492257,99.1209607 51.9492257,98.0365438 L51.9492257,85.9510785 L74.7612688,85.9510785 C77.449512,85.9510785 79.9737619,84.6267274 81.5142466,82.4082182 C83.0543413,80.1899055 83.4226926,77.3478027 82.4993768,74.805716" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="js-completed-bar completed-bar" data-complete="55">
+                    <hr class="completed-bar__dashed">
+                    <i class="fas fa-truck-moving completed-bar__truck"></i>
+                </div>
+            </div>
+        </div>
+        <div id="bcl"><a style="font-size:8pt;text-decoration:none;" href="http://www.devanswer.com">Developers
+                Answer</a></div>
+    </div>
+
+    <script>
+        const progress = document.querySelector(".js-completed-bar");
+        if (progress) {
+            progress.style.width = progress.getAttribute("data-complete") + "%";
+            progress.style.opacity = 1;
+        }
+    </script>
+</body>
+
+</html>

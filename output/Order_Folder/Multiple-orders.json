@@ -1,0 +1,187 @@
+{
+  "Booking number": {
+    "company_phrasing": "Booking number",
+    "value": 9191919,
+    "similarity": 100
+  },
+  "Agreed tariff": {
+    "company_phrasing": "Agreed tariff",
+    "value": 900,
+    "similarity": 100
+  },
+  "Invoice reference": {
+    "company_phrasing": "Invoice reference",
+    "value": 5000,
+    "similarity": 100
+  },
+  "Company name": {
+    "company_phrasing": "Company name",
+    "value": "Daan BV",
+    "similarity": 100
+  },
+  "Contact person": {
+    "company_phrasing": "Contact person name",
+    "value": "Daan Matheeuwsen",
+    "similarity": 100
+  },
+  "E-mail address": {
+    "company_phrasing": "E-mail adress",
+    "value": "Test@test.com",
+    "similarity": 96
+  },
+  "Phone Number": {
+    "company_phrasing": "Phone number",
+    "value": "Test",
+    "similarity": 100
+  },
+  "Loading address": {
+    "company_phrasing": "Loading address",
+    "value": "Vogten Staal",
+    "similarity": 100
+  },
+  "Loading date": {
+    "company_phrasing": "Loading date",
+    "value": "2024-05-28",
+    "similarity": 100
+  },
+  "Loading Postalcode": {
+    "company_phrasing": "Loading Postal code",
+    "value": 6222,
+    "similarity": 97
+  },
+  "Loading reference": {
+    "company_phrasing": "Loading reference",
+    "value": 1100,
+    "similarity": 100
+  },
+  "Quantity": {
+    "company_phrasing": "Quantity",
+    "value": 3,
+    "similarity": 100
+  },
+  "Ship unit": {
+    "company_phrasing": "Ship unit",
+    "value": "FTL",
+    "similarity": 100
+  },
+  "Weight per ship unit": {
+    "company_phrasing": "Weight per ship unit",
+    "value": 1200,
+    "similarity": 100
+  },
+  "Total weight": {
+    "company_phrasing": "Total weight",
+    "value": 3600,
+    "similarity": 100
+  },
+  "Length": {
+    "company_phrasing": "Length",
+    "value": 1.2,
+    "similarity": 100
+  },
+  "Width": {
+    "company_phrasing": "Width",
+    "value": 0.8,
+    "similarity": 100
+  },
+  "Height": {
+    "company_phrasing": "Height",
+    "value": 2.3,
+    "similarity": 100
+  },
+  "Stackable": {
+    "company_phrasing": "Stackable",
+    "value": "No",
+    "similarity": 100
+  },
+  "Description": {
+    "company_phrasing": "Description",
+    "value": "Test",
+    "similarity": 100
+  },
+  "Pallet exchange": {
+    "company_phrasing": "Palletexchange",
+    "value": "Yes",
+    "similarity": 97
+  },
+  "ADR": {
+    "company_phrasing": "ADR",
+    "value": "No",
+    "similarity": 100
+  },
+  "ADR code": {
+    "company_phrasing": "ADR code",
+    "value": "no",
+    "similarity": 100
+  },
+  "A-sign / waste registration": {
+    "company_phrasing": "A-sign / waste registration",
+    "value": "No",
+    "similarity": 100
+  },
+  "Safety equipment": {
+    "company_phrasing": "Safety equipment",
+    "value": "No",
+    "similarity": 100
+  },
+  "Insurance next to CMR conditions": {
+    "company_phrasing": "Insurance next to CMR conditions",
+    "value": "No",
+    "similarity": 100
+  },
+  "Temperature": {
+    "company_phrasing": "Temperature",
+    "value": "No",
+    "similarity": 100
+  },
+  "Minimum Temperature": {
+    "company_phrasing": "Minimum Temperature",
+    "value": 0,
+    "similarity": 100
+  },
+  "Maximum temperature": {
+    "company_phrasing": "Maximum temperature",
+    "value": 0,
+    "similarity": 100
+  },
+  "Trailer type": {
+    "company_phrasing": "Trailer Type",
+    "value": "COMBI-TRAILER",
+    "similarity": 100
+  },
+  "Load/Unloading information": {
+    "company_phrasing": "Load/Unloading information",
+    "value": "FROM BOTH SIDES AND THE TOP LOADING AND UNLOADING",
+    "similarity": 100
+  },
+  "License plate required": {
+    "company_phrasing": "Licenseplate required",
+    "value": "No",
+    "similarity": 98
+  },
+  "Remark": {
+    "company_phrasing": "Remark",
+    "value": "No",
+    "similarity": 100
+  },
+  "Unloading date": {
+    "company_phrasing": "Unloading address",
+    "value": 1234567,
+    "similarity": 97
+  },
+  "Unloading address": {
+    "company_phrasing": "Unloading date",
+    "value": 123123,
+    "similarity": 97
+  },
+  "Unloading reference": {
+    "company_phrasing": "Unloading reference",
+    "value": 1140,
+    "similarity": 97
+  },
+  "Unloading Postalcode": {
+    "company_phrasing": "Unloading postal code",
+    "value": 11111,
+    "similarity": 98
+  }
+}

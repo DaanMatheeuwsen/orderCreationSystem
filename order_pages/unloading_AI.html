@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="fields">
+        <div class="unmappedFields">
+            <div class="unmappedFieldsTitle">Unmapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle bigText">Company fields</div>
+                        <div class="unmappedTitle">&#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+
+                </div>
+            </div>
+        </div>
+        <div class="mappedFields">
+            <div class="unmappedFieldsTitle">Mapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle bigText">Unloading information</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Unloading address </div>
+                        <div class="orderBubble big" id="unloading-address">
+                            <div class="orderBubbleText bigtext"></div>
+                            <div class="removeBubble" onmousedown="removeOrderBubble(event)">x</div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Unloading date</div>
+                        <div class="orderBubble big" id="unloading-date-mapped">
+                            <div class="orderBubbleText bigtext"></div>
+                            <div class="removeBubble" onmousedown="removeOrderBubble(event)">x</div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Unloading Postalcode</div>
+                        <div class="orderBubble big" id="unloading-date">
+                            <div class="orderBubbleText bigtext"></div>
+                            <div class="removeBubble" onmousedown="removeOrderBubble(event)">x</div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Unloading reference</div>
+                        <div class="orderBubble big" id="unloading-date">
+                            <div class="orderBubbleText bigtext"></div>
+                            <div class="removeBubble" onmousedown="removeOrderBubble(event)">x</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        // Function to toggle the accordion
+        function toggleAccordion() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        }
+
+        // Loop through each accordion element
+        var acc = document.getElementsByClassName("Orderinfo");
+        for (var i = 0; i < acc.length; i++) {
+            // Trigger the click event on each accordion element
+            toggleAccordion.call(acc[i]);
+
+            // Add event listener to toggle accordion on click
+            acc[i].addEventListener("click", toggleAccordion);
+        }
+    </script>
+
+
+    <script type="module">
+        import Draggable from 'https://cdn.jsdelivr.net/npm/@shopify/draggable/build/esm/Draggable/Draggable.mjs';
+        import Swappable from 'https://cdn.jsdelivr.net/npm/@shopify/draggable/build/esm/Swappable/Swappable.mjs';
+        const swappable = new Swappable(document.querySelectorAll('.panelWrap'), {
+            draggable: '.orderBubble',
+        });
+
+        var originalElement = '';
+
+        // Event listener for swappable:swapped event
+        swappable.on('swappable:swap', (evt) => {
+            // Store the original element before it's swapped
+            originalElement = evt.data.dragEvent.over
+            console.log("1" + originalElement)
+        });
+
+        swappable.on('swappable:stop', (evt) => {
+            // Get the dragged element
+            const draggedElement = evt.data.dragEvent.source;
+            // Traverse the DOM to find the corresponding orderBubbleWrap
+            const orderBubbleWrap = draggedElement.closest('.orderBubbleWrap');
+
+            // Find the orderBubbleTitle within the orderBubbleWrap
+            const orderBubbleTitle = orderBubbleWrap.querySelector('.orderBubbleTitle').textContent.trim();
+
+            var originalBubbleTitle = 'empty';
+            var original_company_phrasing = 'empty';
+            var original_value = 'empty';
+
+            const originalBubbleWrap = originalElement.closest('.orderBubbleWrap');
+            if (originalBubbleWrap.querySelector('.orderBubbleTitle')) {
+                // If it contains .orderBubbleTitle, proceed with the logic
+                originalBubbleTitle = originalBubbleWrap.querySelector('.orderBubbleTitle').textContent.trim();
+            }
+            else {
+                originalBubbleTitle = 'empty'
+            }
+            var originalText = originalElement.textContent.trim();
+            var [original_company_phrasing, original_value] = originalText.split(':').map(item => item.trim());
+            // Get the text content of the dragged element
+            var draggedText = draggedElement.textContent.trim();
+
+            // Split the source string to extract company_phrasing and value
+            var [company_phrasing, value] = draggedText.split(':').map(item => item.trim());
+            yourFunction(orderBubbleTitle, company_phrasing, value, originalBubbleTitle, original_company_phrasing, original_value)
+        });
+
+        async function yourFunction(orderBubbleTitle, companyPhrasing, value, originalBubbleTitle, original_company_phrasing, original_value) {
+            try {
+                // Fetch the JSON file
+                const response = await fetch('./output/Order_Folder/Multiple-orders.json');
+                const json = await response.json();
+
+                if (originalBubbleTitle === "empty") {
+                    console.log("Nice")
+                    for (const key in json) {
+                        if (json[key].company_phrasing === companyPhrasing || json[key].value === value) {
+                            const temporaryValue = key;
+                            const temporaryObject = json[key]
+                            console.log(original_company_phrasing)
+                            if (original_company_phrasing === 'x') {
+                                delete json[key]
+                                json[orderBubbleTitle] = temporaryObject
+                                break;
+                            }
+                            delete json[key]
+                            console.log(temporaryValue, temporaryObject)
+                            console.log(original_company_phrasing, original_value)
+
+                            for (const key in json) {
+                                if (json[key].company_phrasing === original_company_phrasing || json[key].value === original_value) {
+                                    console.log("test")
+                                    const temporarySecondValue = key;
+                                    const temporarySecondObject = json[key];
+                                    console.log(temporarySecondValue, temporarySecondObject)
+                                    delete json[key]
+                                    json[temporaryValue] = temporarySecondObject;
+                                    json[temporarySecondValue] = temporaryObject;
+                                    console.log(json)
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                }
+                else {
+                    // Iterate over the properties of the JSON object
+                    for (const key in json) {
+
+                        // Check if the current property directly matches the orderBubbleTitle
+                        if (key === orderBubbleTitle) {
+                            const temporary_value = json[key]
+                            for (const key in json) {
+                                if (key === originalBubbleTitle) {
+                                    const second_temporary_value = json[key]
+                                    delete json[key];
+                                    json[orderBubbleTitle] = second_temporary_value;
+                                }
+                            }
+                            json[originalBubbleTitle] = temporary_value
+                            console.log(json)
+                            break; // Exit the loop since the update is done
+                        }
+
+                        // Check if either company_phrasing or value matches the orderBubbleTitle
+                        if (json[key].company_phrasing === companyPhrasing && json[key].value === value) {
+                            // Get the current property value
+                            const propertyValue = json[key];
+                            // Delete the existing property
+                            delete json[key];
+                            // Add a new property with the orderBubbleTitle as the key name
+                            json[orderBubbleTitle] = propertyValue;
+                            console.log(json)
+                            // Exit the loop since the matching property is found
+                            break;
+                        }
+                    }
+                }
+
+
+                await saveJsonData(json);
+            } catch (error) {
+                console.error('Error fetching or parsing JSON:', error);
+            }
+        }
+
+        async function saveJsonData(jsonData) {
+            try {
+                // Send the modified JSON data to the server
+                const response = await fetch('http://127.0.0.1:5000/saveJson', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                });
+
+                if (!response.ok) {
+                    console.error('Failed to save JSON data:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error saving JSON data:', error);
+            }
+        }
+    </script>
+
+    <!-- Existing HTML code -->
+
+    <script>
+        function removeOrderBubble(event) {
+            // Get the parent orderBubbleWrap
+            const orderBubbleWrap = event.target.closest('.orderBubbleWrap');
+            console.log(orderBubbleWrap)
+            // Retrieve order information
+            const orderBubbleTitle = orderBubbleWrap.querySelector('.orderBubbleTitle').textContent.trim();
+            const orderBubbleText = orderBubbleWrap.querySelector('.orderBubbleText').textContent.trim();
+            const [company_phrasing, value] = orderBubbleText.split(':').map(item => item.trim());
+            console.log(orderBubbleTitle)
+
+            // Fetch the existing JSON file
+            fetch('./output/Order_Folder/Multiple-orders.json')
+                .then(response => response.json())
+                .then(jsonData => {
+
+                    let unknownCount = 0;
+                    for (const key in jsonData) {
+                        if (key.startsWith('Unknown_value_')) {
+                            unknownCount++;
+                            console.log(unknownCount)
+                        }
+                    }
+
+                    for (const key in jsonData) {
+                        // Check if either company_phrasing or value matches the orderBubbleTitle
+                        if (key === orderBubbleTitle) {
+                            // Get the current property value
+                            const propertyValue = jsonData[key];
+                            delete jsonData[key]
+                            jsonData[`Unknown_value_${unknownCount + 1}`] = propertyValue
+                            console.log(propertyValue)
+                            saveJsonData(jsonData);
+                        }
+                    }
+                })
+                .catch(error => console.error('Error fetching or parsing JSON:', error));
+        }
+
+        async function saveJsonData(jsonData) {
+            try {
+                // Send the modified JSON data to the server
+                const response = await fetch('http://127.0.0.1:5000/saveJson', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                });
+
+                if (!response.ok) {
+                    console.error('Failed to save JSON data:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error saving JSON data:', error);
+            }
+        }
+    </script>
+
+
+    <script>
+        fetch('./output/Order_Folder/Multiple-orders.json')
+            .then(response => response.json())
+            .then(data => {
+                // Extracting the Loading Information section from the JSON
+                const loadingData = data;
+
+                // Selecting the order bubble titles for the Loading Information section
+                const orderBubbleTitles = document.querySelectorAll('.orderBubbleTitle');
+
+                // Looping through each order bubble title
+                orderBubbleTitles.forEach((title) => {
+                    // Matching the order bubble title with the corresponding property in the Loading Information section
+                    const property = title.textContent.trim();
+
+                    // Finding the corresponding value in the JSON data
+                    const valueObj = loadingData[property];
+                    if (valueObj) {
+                        const value = valueObj['value'];
+                        const company_phrasing = valueObj['company_phrasing'];
+
+                        // Selecting the corresponding order bubble text
+                        const orderBubbleText = title.nextElementSibling.querySelector('.orderBubbleText');
+
+                        // Filling the order bubble text with the property name and its corresponding value
+                        orderBubbleText.innerHTML = `<strong>${company_phrasing}:</strong> ${value}`;
+                    } else {
+                        // If value is not found, keep orderBubbleText empty
+                        const orderBubbleText = title.nextElementSibling.querySelector('.orderBubbleText');
+                        orderBubbleText.innerHTML = '';
+                    }
+                });
+
+                // Finding unmapped fields and displaying them
+                const unmappedFieldsPanel = document.querySelector('.unmappedFields .panelWrap');
+
+                Object.keys(loadingData).forEach(property => {
+                    if (property.includes('Unknown_value')) {
+                        const value = loadingData[property].value;
+                        const fieldElement = document.createElement('div');
+                        fieldElement.classList.add('orderBubbleWrap');
+                        fieldElement.innerHTML = `
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext">${loadingData[property].company_phrasing}: ${value}</div>
+                        </div>
+                    `;
+                        unmappedFieldsPanel.appendChild(fieldElement);
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="fields">
+        <div class="unmappedFields">
+            <div class="unmappedFieldsTitle">Unmapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle bigText">Company fields</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                </div>
+            </div>
+        </div>
+        <div class="mappedFields">
+            <div class="unmappedFieldsTitle">Mapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle bigText">Goods</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Quantity </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Ship unit</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Weight per ship unit</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Total weight</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Length </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Width </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Height</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Stackable</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Description</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    </script>
+
+    <script>
+        var acc = document.getElementsByClassName("Orderinfo");
+        var i;
+
+        // Function to toggle the accordion
+        function toggleAccordion() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        }
+
+        // Loop through each accordion element
+        for (i = 0; i < acc.length; i++) {
+            // Add event listener to toggle accordion on click
+            acc[i].addEventListener("click", toggleAccordion);
+
+            // Trigger the click event on each accordion element
+            toggleAccordion.call(acc[i]);
+        }
+    </script>
+
+    <script type="module">
+        import Draggable from 'https://cdn.jsdelivr.net/npm/@shopify/draggable/build/esm/Draggable/Draggable.mjs';
+        import Swappable from 'https://cdn.jsdelivr.net/npm/@shopify/draggable/build/esm/Swappable/Swappable.mjs';
+        const swappable = new Swappable(document.querySelectorAll('.panelWrap'), {
+            draggable: '.orderBubble',
+        });
+    </script>
+
+    <script>
+        fetch('./output/Order_Folder/Multiple-orders.json')
+            .then(response => response.json())
+            .then(data => {
+                // Extracting the Loading Information section from the JSON
+                const loadingData = data;
+
+                console.log(loadingData);
+
+                // Selecting the order bubble titles for the Loading Information section
+                const orderBubbleTitles = document.querySelectorAll('.orderBubbleTitle');
+
+                // Looping through each order bubble title
+                orderBubbleTitles.forEach((title) => {
+                    // Matching the order bubble title with the corresponding property in the Loading Information section
+                    const property = title.textContent.trim();
+
+                    console.log('Property:', property);
+
+                    // Finding the corresponding value in the JSON data
+                    const valueObj = loadingData[property];
+                    if (valueObj) {
+                        const value = valueObj['value'];
+                        const company_phrasing = valueObj['company_phrasing'];
+
+                        // Selecting the corresponding order bubble text
+                        const orderBubbleText = title.nextElementSibling.querySelector('.orderBubbleText');
+
+                        // Filling the order bubble text with the property name and its corresponding value
+                        orderBubbleText.innerHTML = `<strong>${company_phrasing}:</strong> ${value}`;
+
+                        // Logging the match
+                        console.log(`Order bubble title "${property}" matches property "${property}" in the JSON. Value: "${value}"`);
+                    } else {
+                        // If value is not found, keep orderBubbleText empty
+                        const orderBubbleText = title.nextElementSibling.querySelector('.orderBubbleText');
+                        orderBubbleText.innerHTML = '';
+                    }
+                });
+
+                // Finding unmapped fields and displaying them
+                const unmappedFieldsPanel = document.querySelector('.unmappedFields .panelWrap');
+
+                Object.keys(loadingData).forEach(property => {
+                    if (property.includes('Unknown_value')) {
+                        const value = loadingData[property].value;
+                        const fieldElement = document.createElement('div');
+                        fieldElement.classList.add('orderBubbleWrap');
+                        fieldElement.innerHTML = `
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext">${loadingData[property].company_phrasing}: ${value}</div>
+                        </div>
+                    `;
+                        unmappedFieldsPanel.appendChild(fieldElement);
+                    }
+                });
+
+                // After adding unmapped bubbles, select all orderBubbles again to include them
+                selectOrderBubbles();
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+    </script>
+</body>
+
+</html>

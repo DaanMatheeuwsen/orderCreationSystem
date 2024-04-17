@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
+body {
+    background-image: url("./images/OCS_Background.png");
+    background-repeat: none;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.progressBackground {
+    width: 100%; /* Set width to cover the entire viewport */
+    height: 100%; /* Set height to cover the entire viewport */
+    position: fixed; /* Change from absolute to fixed */
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Position at the left of the viewport */
+    background-color: rgba(53, 112, 119, 0.7);
+}
+
+html {
+    height: 0px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Define styles for the sidebar */
+.sidebar {
+    background-color: rgba(38, 0, 0, 1);
+    /* Background color of the sidebar */
+    color: #fff;
+    /* Text color */
+    width: 200px;
+    /* Initial width of the sidebar */
+    height: 100vh;
+    /* Full height of the viewport */
+    position: fixed;
+    /* Fixed positioning to keep the sidebar always visible */
+    top: 0;
+    /* Position at the top of the viewport */
+    left: 0;
+    /* Position at the left edge of the viewport */
+    padding: 20px;
+    /* Padding inside the sidebar */
+    overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds height */
+    transition: width 0.3s;
+    /* Smooth transition for width changes */
+
+    z-index: 100;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.OCSLogo {
+    width: 70px;
+    /* Set width of the logo */
+    height: 70px;
+    /* Set height of the logo */
+    padding-right: 5px;
+}
+
+.OCSLogo-Title {
+    font-family: 'Righteous', cursive;
+    /* Use the Righteous font family */
+    font-size: 52px;
+    /* Add any other styles you want for the OCS logo title */
+}
+
+.mainSidebar {
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    /* Use the Inter font family for the sidebar list */
+    font-weight: bold;
+    /* Set font weight to bold */
+}
+
+.mainTitle {
+    margin-left: 20px;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.sidebarList {
+    justify-content: flex-start;
+
+
+}
+
+.sidebar ul {
+    list-style-type: none;
+    /* Remove bullet points from the list */
+    margin-top: 0px;
+    margin-right: 25px;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+    /* Add spacing between list items */
+    transition: color 0.3s ease;
+}
+
+.sidebar li:hover {
+    color: #8DC5CD;
+    cursor: pointer;
+}
+
+.sidebar i {
+    padding: 2px;
+    padding-left: 7px;
+}
+
+
+.sidebarText {
+    font-size: 16px;
+    margin-left: 20px;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.sidebarText:hover {
+    color: #8DC5CD;
+    cursor: pointer;
+}
+
+/* Excel Import  */
+
+.excelImport {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.importSquare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60rem;
+    height: 30rem;
+    border-radius: 20px;
+    background-color: #8DC5CD;
+    transition: background-color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    /* Use the Inter font family for the sidebar list */
+    flex-direction: column;
+    gap: 15px;
+}
+
+.importSquare:hover {
+    background-color: #6a8e94;
+    cursor: pointer;
+}
+
+.importText {
+    font-size: 35px;
+    font-weight: bold;
+    color: #0F3B41;
+}
+
+/* Order page */
+
+.dragFieldView {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    /* Use the Inter font family for the sidebar list */
+    font-weight: bold;
+}
+
+.orderName {
+    position: absolute;
+    margin-top: 29px;
+    margin-left: 473px;
+    font-family: 'Inter', sans-serif;
+    /* Use the Inter font family for the sidebar list */
+    font-weight: bold;
+    color: #F8D8D3;
+    font-size: 50px;
+    ;
+}
+
+.Buttons {
+    position: absolute;
+    margin-left: 1900px;
+    margin-top: 45px;
+    font-family: 'Inter', sans-serif;
+    /* Use the Inter font family for the sidebar list */
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.removeButton {
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #6E0D0D;
+    color: #F8D8D3;
+    text-align: center;
+    transition: background-color 0.4s ease;
+}
+
+.removeButton:hover {
+    background-color: #4d0909;
+    cursor: pointer;
+}
+
+.sendButton {
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #54E37C;
+    color: #1E363A;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.sendButton:hover {
+    background-color: #4a9e62;
+    color: #F8D8D3;
+    cursor: pointer;
+}
+
+.dragField {
+    margin-top: 50px;
+    margin-left: 200px;
+    background-color: #8DC5CD;
+    width: 1900px;
+    height: 1120px;
+    border-radius: 45px;
+}
+
+.fieldHeader {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    gap: 10px;
+}
+
+.headerTitle {
+    color: #1E363A;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.headerTitle:hover {
+    color: #dfdfdf;
+}
+
+.selected {
+    color: white;
+}
+
+.selected:hover {
+    color: white;
+}
+
+hr.medium-width {
+    width: 95%;
+    border: 1px solid #1E363A;
+    margin: 0 auto;
+}
+
+hr.fieldBorder {
+    width: 95%;
+    margin: 15auto;
+    border: 1px solid #F8D8D3;
+}
+
+.headerTitle:hover {
+    cursor: pointer;
+}
+
+.fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 93%;
+}
+
+.blankFields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unmappedFields {
+    margin-top: 25px;
+    background-color: #1E363A;
+    width: 900px;
+    height: 1030px;
+    border-radius: 5%;
+}
+
+.unmappedFieldsTitle {
+    color: #F8D8D3;
+    font-size: 25px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+
+}
+
+.mappedFieldsTitle {
+    color: #F8D8D3;
+    font-size: 30px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+
+}
+
+.mappedFields {
+    margin-top: 17px;
+    background-color: #236A73;
+    width: 900px;
+    height: 1030px;
+    border-radius: 5%;
+}
+
+.fieldValueBorder {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+hr.medium-small {
+    width: 85%;
+    margin: 5 auto;
+    border: 1px solid #F8D8D3;
+}
+
+.unmappedFieldsView {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.unmappedFieldsView:hover {
+    cursor: pointer;
+}
+
+.unmappedFieldsView::selection {
+    background-color: transparent;
+}
+
+.unmappedTitle {
+    color: #F8D8D3;
+    font-size: 17px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.panel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 0.2s ease-out;
+}
+
+.panelWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 80%;
+    padding: 0 18px;
+    justify-content: flex-start;
+}
+
+.orderBubbleWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.orderBubbleTitle {
+    color: #F8D8D3;
+    display: flex;
+    letter-spacing: 1px;
+    font-size: 13px;
+    margin-left: 8px;
+}
+
+.orderBubble {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+    font-size: 15px;
+    background-color: #facec7;
+    width: 230px;
+    flex-shrink: 3;
+    border-radius: 5px;
+    height: 33px;
+}
+
+.removeBubble {
+    z-index: 999;
+    display: none;
+    align-items: center;
+    color: #6E0D0D;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: display 0.3s ease;
+}
+
+.orderBubble:hover .removeBubble {
+    display: flex; /* Make removeBubble visible when hovering over orderBubble */
+    opacity: 1;
+}
+
+.removeBubble:hover {
+    cursor: pointer;
+}
+
+.optional {
+    background-color: rgba(255, 255, 255, 0.705);
+}
+
+.optionalText {
+    color: white;
+}
+
+.big {
+    width: 720px;
+    height: 40px;
+}
+
+.orderBubbleText {
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.editable {
+    background-color: rgba(255, 255, 255, 0.942); /* Default background color */
+}
+
+.orderBubbleText[contenteditable="true"] {
+    outline: none;
+}
+
+.bigtext {
+    font-size: 17px;
+}
+
+.bigText {
+    font-size: 22px;
+}
+
+.mandatory {
+    display: flex;
+    flex-direction: row;
+}

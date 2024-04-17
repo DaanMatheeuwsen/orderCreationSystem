@@ -1,0 +1,130 @@
+.loader {
+    width: 120px;
+    height: 120px;
+    background-image: url('./images/OCS-logo-12.png'); /* Replace 'path/to/your/image.png' with the path to your image */
+    background-size: cover; /* Adjust image size to cover the loader */
+    border-radius: 50%; /* Ensure the loader is circular */
+    animation: spin 2.5s linear infinite;
+    z-index: 100;
+}
+
+.loading-wrapper {
+    display: none;
+}
+
+.loading-Text {
+    margin-top: 7px;
+    z-index: 100;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+.loading-text-wrapper {
+    position: fixed; /* Change from absolute to fixed */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the wrapper */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+}
+
+.background-loading {
+    width: 100%; /* Set width to cover the entire viewport */
+    height: 100%; /* Set height to cover the entire viewport */
+    position: fixed; /* Change from absolute to fixed */
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Position at the left of the viewport */
+    background-color: black;
+    opacity: 0.5;
+    z-index: 3;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.popup{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.successPopup {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.successText {
+    text-align: center;
+    font-size: 35px;
+    z-index: 100;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+.popupBackground {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    z-index: 99;
+    border-radius: 5%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ButtonsSuccess {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+.newOrderButton {
+    margin: 10px;
+    margin-left: 10px;
+    background-color: #0c556b;
+    padding: 10px;
+    border-radius: 5%;
+    transition: background-color 0.3s ease;
+}
+
+.closeButton {
+    margin: 10px;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 5%;
+    transition: background-color 0.3s ease;
+}
+
+.newOrderButton:hover {
+    cursor: pointer;
+    background-color: #0c333f;
+}
+
+.closeButton:hover {
+    cursor: pointer;
+    background-color: rgb(77, 77, 77);
+}

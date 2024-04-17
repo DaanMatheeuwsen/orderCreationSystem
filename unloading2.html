@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="fields">
+        <div class="unmappedFields">
+            <div class="unmappedFieldsTitle">Unmapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle bigText">Unloading information</div>
+                        <div class="unmappedTitle">4 &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                    <div class="orderBubble big"></div>
+                    <div class="orderBubble big"></div>
+                    <div class="orderBubble big"></div>
+                    <div class="orderBubble big"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mappedFields">
+            <div class="unmappedFieldsTitle">Mapped fields</div>
+            <hr class="fieldBorder">
+            <div class="Orderinfo">
+                <div class="unmappedFieldsView">
+                    <div class="fieldValueBorder">
+                        <div class="unmappedTitle bigText">Unloading information</div>
+                        <div class="unmappedTitle"> &#9660;</div>
+                    </div>
+                </div>
+                <hr class="medium-small">
+            </div>
+            <div class="panel">
+                <div class="panelWrap">
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Name </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Street + housenumber</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Country code </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">City </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Postal code </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Req. unloading date from</div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Req. unloading time </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Req. unloading date until </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Req. unloading time until </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Slotbooking required </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext">Neutral unloading required </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                    <div class="orderBubbleWrap">
+                        <div class="orderBubbleTitle bigtext"> Unloading reference </div>
+                        <div class="orderBubble big">
+                            <div class="orderBubbleText bigtext"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("Orderinfo");
+        var i;
+
+        // Function to toggle the accordion
+        function toggleAccordion() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        }
+
+        // Loop through each accordion element
+        for (i = 0; i < acc.length; i++) {
+            // Add event listener to toggle accordion on click
+            acc[i].addEventListener("click", toggleAccordion);
+
+            // Trigger the click event on each accordion element
+            toggleAccordion.call(acc[i]);
+        }
+    </script>
+
+    <script>
+        // Fetching the JSON file
+        fetch('Table-Order-Request.json')
+            .then(response => response.json())
+            .then(data => {
+                // Extracting the Unloading Information section from the JSON
+                const unloadingData = data['Unloading Information'];
+
+                // Selecting the order bubble titles
+                const orderBubbleTitles = document.querySelectorAll('.orderBubbleTitle');
+
+                // Looping through each order bubble title
+                orderBubbleTitles.forEach((title) => {
+                    // Matching the order bubble title with the corresponding property in the Unloading Information section
+                    const property = title.textContent.trim();
+
+                    // Finding the corresponding value in the JSON data
+                    const value = unloadingData[0][property];
+
+                    // Selecting the corresponding order bubble text
+                    const orderBubbleText = title.nextElementSibling.querySelector('.orderBubbleText');
+
+                    // Handling undefined values
+                    const displayValue = (value !== undefined) ? value : 'N/A';
+
+                    // Filling the order bubble text with the property name and its corresponding value
+                    orderBubbleText.innerHTML = `<strong>${property}:</strong> ${displayValue}`;
+
+                    // Logging the match
+                    console.log(`Order bubble title "${property}" matches property "${property}" in the JSON. Value: "${displayValue}"`);
+                });
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+    </script>
+
+    <script>
+        // Function to handle drag start event
+        function dragStart(event) {
+            draggedBubble = event.target;
+        }
+
+        // Function to handle drag over event
+        function dragOver(event) {
+            event.preventDefault();
+        }
+
+        // Function to handle drop event
+        function drop(event) {
+            event.preventDefault();
+            const targetBubble = event.target;
+
+            // Ensure that the target is a valid drop zone and not the dragged bubble itself
+            if (targetBubble.classList.contains('orderBubble') && draggedBubble !== targetBubble) {
+                // Swap the innerHTML of the dragged bubble and the target bubble
+                const temp = draggedBubble.innerHTML;
+                draggedBubble.innerHTML = targetBubble.innerHTML;
+                targetBubble.innerHTML = temp;
+            }
+        }
+
+        if (!window.orderBubbles) {
+            const orderBubbles = document.querySelectorAll('.orderBubble');
+            orderBubbles.forEach(bubble => {
+                bubble.setAttribute('draggable', true);
+                bubble.addEventListener('dragstart', dragStart);
+            });
+        }
+
+
+        if (!window.mappedFields) {
+            const mappedFields = document.querySelectorAll('.mappedFields');
+            mappedFields.forEach(field => {
+                field.addEventListener('dragover', dragOver);
+                field.addEventListener('drop', drop);
+            });
+        }
+    </script>
+</body>
+
+</html>

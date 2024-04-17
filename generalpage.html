@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="..." crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="popup" style="display: none;">
+        <div class="successPopup">
+            <div class="popupBackground">
+                <div class="popUpbackgroundMiddle">
+                    <img class="success" alt="Success GIF" id="successGIF">
+                    <div>powered by giphy</div>
+                    <p class="successText">Order(s) successfully sent <br /> with 0 exceptions!</p>
+                    <div class="ButtonsSuccess">
+                        <div class="newOrderButton">Create new order</div>
+                        <div class="closeButton">Close</div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-loading"></div>
+        </div>
+    </div>
+    <div class="loading-wrapper">
+        <div class="loading-text-wrapper">
+            <div class="loader"></div>
+            <div class="loading-Text dots">Please wait while the orders are sent to OTM...</div>
+        </div>
+        <div class="background-loading"></div>
+    </div>
+
+    <div class="sidebar">
+        <div class="logoContainer">
+            <img src="./images/OCS-logo-12.png" class="OCSLogo">
+            <div class="OCSLogo-Title">OCS</div>
+        </div>
+        <hr>
+        <div class="mainSidebar">
+            <div class="mainTitle">Order Entry</div>
+            <div class="sidebarList">
+                <a href="http://127.0.0.1:5500/index.html">
+                    <div class="sidebarText"><i class="fas fa-plus"></i> Create</div>
+                </a>
+                <a href="http://127.0.0.1:5500/generalpage.html">
+                    <div class="sidebarText"><i class="fas fa-file-alt"></i> Current order</div>
+                </a>
+                <a href="http://127.0.0.1:5500/blankTemplate.html">
+                    <div class="sidebarText"><i class="fas fa-file"></i>Blank Template</div>
+                </a>
+                <a href="http://127.0.0.1:5500/outlookImport.html">
+                    <div class="sidebarText"><i class="fas fa-envelope"></i>Outlook import</div>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <div class="mainSidebar">
+            <div class="mainSidebar">
+                <div class="mainTitle">Statusses</div>
+                <div class="sidebarList">
+                    <a href="http://127.0.0.1:5500/exceptions.html">
+                        <div class="sidebarText"><i class="fas fa-file-excel"></i>Exceptions</div>
+                    </a>
+                    <a href="http://127.0.0.1:5500/progressBar.html">
+                        <div class="sidebarText"><i class="fas fa-truck"></i>Progress bar</div>
+                    </a>
+                    <a href="http://127.0.0.1:5500/orderHistory.html">
+                        <div class="sidebarText"><i class="fas fa-history"></i>Order history</div>
+                    </a>
+                </div>
+            </div>
+            <br /><br /><br />
+        </div>
+        <hr>
+
+    </div>
+
+    <div class="orderName">Order Name - Client</div>
+    <div class="Buttons">
+        <div class="removeButton" id="navigateButton">Remove</div>
+        <div class="sendButton">Send to OTM</div>
+    </div>
+    <div class="dragFieldView">
+        <div class="dragField">
+            <div class="fieldHeader">
+                <div class="headerTitleBackground" onclick="switchPage('mandatory')" data-page="mandatory">
+                    <div class="headerTitle selected">Mandatory fields</div>
+                </div>
+                <div class="headerTitleBackground" onclick="switchPage('OCinformation2')" data-page="OCinformation2">
+                    <div class="headerTitle">Order / Contact information</div>
+                </div>
+                <div class="headerTitleBackground" onclick="switchPage('loading2')" data-page="loading2">
+                    <div class="headerTitle">Loading information</div>
+                </div>
+                <div class="headerTitleBackground" onclick="switchPage('unloading2')" data-page="unloading2">
+                    <div class="headerTitle">Unloading information</div>
+                </div>
+                <div class="headerTitleBackground" onclick="switchPage('goods2')" data-page="goods2">
+                    <div class="headerTitle">Goods</div>
+                </div>
+                <div class="headerTitleBackground" onclick="switchPage('goodsInformation2')"
+                    data-page="goodsInformation2">
+                    <div class="headerTitle">Goods Information</div>
+                </div>
+                <div class="headerTitleBackground" onclick="switchPage('truck2')" data-page="truck2">
+                    <div class="headerTitle">Truck</div>
+                </div>
+            </div>
+            <hr class="medium-width">
+            <div class="page" id="mandatory">
+                <!-- Content of Order page will be loaded dynamically here -->
+            </div>
+            <div class="page" id="OCinformation2">
+                <!-- Content of Order page will be loaded dynamically here -->
+            </div>
+            <div class="page" id="loading2">
+                <!-- Content of Order page will be loaded dynamically here -->
+            </div>
+            <div class="page" id="unloading2">
+                <!-- Content of Order page will be loaded dynamically here -->
+            </div>
+            <div class="page" id="goods2">
+                <!-- Content of Order page will be loaded dynamically here -->
+            </div>
+            <div class="page" id="goodsInformation2">
+                <!-- Content of Order page will be loaded dynamically here -->
+            </div>
+            <div class="page" id="truck2">
+                <!-- Content of Order page will be loaded dynamically here -->
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function switchPage(pageName) {
+            // Hide all pages
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function (page) {
+                page.classList.remove('active');
+                page.style.display = 'none'; // Hide the page
+            });
+
+            // Remove the 'selected' class from all header titles
+            var headerTitles = document.querySelectorAll('.headerTitle');
+            headerTitles.forEach(function (title) {
+                title.classList.remove('selected');
+            });
+
+            // Show the selected page
+            var selectedPage = document.getElementById(pageName);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+                selectedPage.style.display = 'block'; // Show the page
+            }
+
+            // Add the 'selected' class to the clicked header title
+            var clickedHeaderTitle = document.querySelector('.headerTitleBackground[data-page="' + pageName + '"] .headerTitle');
+            if (clickedHeaderTitle) {
+                clickedHeaderTitle.classList.add('selected');
+            }
+
+            // Load content dynamically (if needed)
+            // This part depends on whether you want to load content dynamically
+            // If not, you can remove it
+            $.get(pageName + '.html', function (data) {
+                $('#' + pageName).html(data);
+            });
+        }
+    </script>
+
+
+
+    <script>
+        var acc = document.getElementsByClassName("Orderinfo");
+        var i;
+
+        // Function to toggle the accordion
+        function toggleAccordion() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        }
+
+        // Loop through each accordion element
+        for (i = 0; i < acc.length; i++) {
+            // Add event listener to toggle accordion on click
+            acc[i].addEventListener("click", toggleAccordion);
+
+            // Trigger the click event on each accordion element
+            toggleAccordion.call(acc[i]);
+        }
+    </script>
+
+    <script>
+        document.querySelector('.sendButton').addEventListener('click', function () {
+            // Show loading animation and background overlay
+            document.querySelector('.loading-wrapper').style.display = 'block';
+
+            // Send data to OTM
+            fetch('http://127.0.0.1:5000/send_to_OTM', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    // Add any data you want to send to the server here
+                })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Data sent to OTM successfully.');
+                        // Fetch random success popup
+                        displayRandomSuccessPopup();
+                    } else {
+                        console.error('Error sending data to OTM.');
+                        // Hide loading animation and background overlay in case of error
+                        document.querySelector('.loading-wrapper').style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error sending data to OTM:', error);
+                    // Hide loading animation and background overlay in case of error
+                    document.querySelector('.loading-wrapper').style.display = 'none';
+                });
+        });
+
+        // Function to fetch a random GIF from Giphy API and display it in the popup
+        function displayRandomSuccessPopup() {
+            // Fetch random GIF from Giphy API
+            fetchRandomGIF();
+        }
+
+        function fetchRandomGIF() {
+            // Fetch random GIF from Giphy API
+            fetch('https://api.giphy.com/v1/gifs/random?api_key=odYrTK3MzVEMvQxg6AJDdGIyfaVhylGB&tag=success&rating=g')
+                .then(response => response.json())
+                .then(data => {
+                    // Log the entire response data for debugging
+                    console.log('API Response:', data);
+
+                    // Extract GIF URL from the response data
+                    const gifURL = data.data.images.original.url;
+
+                    // Log the GIF URL to the console for debugging
+                    console.log('GIF URL:', gifURL);
+
+                    // Display the fetched GIF in the popup
+                    document.getElementById('successGIF').src = gifURL;
+
+                    // Hide loading animation and background overlay
+                    document.querySelector('.loading-wrapper').style.display = 'none';
+
+                    // Show the success popup
+                    document.querySelector('.popup').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error fetching random GIF:', error);
+
+                    // Hide loading animation and background overlay in case of error
+                    document.querySelector('.loading-wrapper').style.display = 'none';
+                });
+        }
+    </script>
+
+    <script>
+        // Function to close the success popup
+        function closeSuccessPopup() {
+            document.querySelector('.popup').style.display = 'none';
+        }
+
+        // Function to navigate to a specific page and close the success popup
+        function goToNewOrderPage() {
+            // Redirect to a specific page
+            window.location.href = 'http://127.0.0.1:5500/index.html';
+        }
+
+        // Add event listener to the close button
+        document.querySelector('.closeButton').addEventListener('click', closeSuccessPopup);
+
+        // Add event listener to the new order button
+        document.querySelector('.newOrderButton').addEventListener('click', goToNewOrderPage);
+    </script>
+    <script>
+        // Call switchPage function to load the "mandatory" page by default
+        switchPage('mandatory');
+    </script>
+
+
+</body>
+
+</html>
