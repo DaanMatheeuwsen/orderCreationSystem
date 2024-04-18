@@ -52,6 +52,7 @@ def createJSONFile(output_file_path):
     earlyPickupTime = loading_info.get('Requested loading time', '')
     loading_reference = loading_info.get('Loading reference', '')
     earlyPickupFullDate = (earlyPickupDate + "T" + earlyPickupTime + "+00:00")
+    
     loadingLocationId = getGidLocation(loading_city, loading_postal_code)
 
     best_match_loading = fuzzy_match(loading_name, loadingLocationId)

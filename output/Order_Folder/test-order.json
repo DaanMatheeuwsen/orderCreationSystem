@@ -1,0 +1,123 @@
+{
+    "Booking number": {
+      "company_phrasing": "Booking number",
+      "value": 9191919,
+      "similarity": 100
+    },
+    "Agreed tariff": {
+      "company_phrasing": "Agreed tariff",
+      "value": 900,
+      "similarity": 100
+    },
+    "Invoice reference": {
+      "company_phrasing": "Invoice reference",
+      "value": 5000,
+      "similarity": 100
+    },
+    "Name (Loading)": {
+      "company_phrasing": "Company name",
+      "value": "Daan BV",
+      "similarity": 100
+    },
+    "City (Loading)": {
+      "company_phrasing": "Loading address",
+      "value": "Vogten Staal",
+      "similarity": 100
+    },
+    "Postalcode (Loading)": {
+      "company_phrasing": "Loading Postal code",
+      "value": 6222,
+      "similarity": 97
+    },
+    "Requested loading date from": {
+      "company_phrasing": "Loading date",
+      "value": "2024-05-28",
+      "similarity": 100
+    },
+    "Requested loading time": {
+      "company_phrasing": "Loading time",
+      "value": "10:00",
+      "similarity": 100
+    },
+    "Loading Reference": {
+      "company_phrasing": "Loading reference",
+      "value": 1100,
+      "similarity": 100
+    },
+    "Name (Unloading)": {
+      "company_phrasing": "Company name",
+      "value": "Vetter",
+      "similarity": 100
+    },
+    "City (Unloading)": {
+      "company_phrasing": "Unloading address",
+      "value": "Loxstedt",
+      "similarity": 100
+    },
+    "Postalcode (Unloading)": {
+      "company_phrasing": "Unloading postal code",
+      "value": 27612,
+      "similarity": 98
+    },
+    "Requested unloading date from": {
+      "company_phrasing": "Unloading date",
+      "value": "2024-05-29",
+      "similarity": 100
+    },
+    "Requested unloading time": {
+      "company_phrasing": "Unloading time",
+      "value": "12:00",
+      "similarity": 100
+    },
+    "Unloading Reference": {
+      "company_phrasing": "Unloading reference",
+      "value": 1140,
+      "similarity": 97
+    },
+    "Width": {
+      "company_phrasing": "Width",
+      "value": 0.8,
+      "similarity": 100
+    },
+    "Length": {
+      "company_phrasing": "Length",
+      "value": 1.2,
+      "similarity": 100
+    },
+    "Weight per ship unit": {
+      "company_phrasing": "Weight per ship unit",
+      "value": 1200,
+      "similarity": 100
+    },
+    "Height": {
+      "company_phrasing": "Height",
+      "value": 2.3,
+      "similarity": 100
+    },
+    "Quantity": {
+      "company_phrasing": "Quantity",
+      "value": 3,
+      "similarity": 100
+    },
+    "Ship Unit": {
+      "company_phrasing": "Ship unit",
+      "value": "FTL",
+      "similarity": 100
+    },
+    "Load/Unloading Information": {
+      "company_phrasing": "Load/Unloading information",
+      "value": "FROM BOTH SIDES AND THE TOP LOADING AND UNLOADING",
+      "similarity": 100
+    },
+    "Palletexchange": {
+      "company_phrasing": "Palletexchange",
+      "value": "Yes",
+      "similarity": 97
+    },
+    "Licenseplate Required": {
+      "company_phrasing": "Licenseplate required",
+      "value": "No",
+      "similarity": 98
+    }
+  }
+  
