@@ -1,0 +1,104 @@
+{
+    "shipUnitOrigin": "RS",
+    "earlyDeliveryDate": {
+        "value": "2024-05-29T12:00+00:00"
+    },
+    "transportModeGid": "TL",
+    "destLocationGid": [
+        "RSK.VETTER-DE-27612-LOXSTEDT",
+        "RSK.DE-27612-LOXSTEDT"
+    ],
+    "priority": 1,
+    "transportHandlingUnitGid": "RSK.FTL",
+    "earlyPickupDate": {
+        "value": "2024-05-28T10:00+00:00"
+    },
+    "releaseMethodGid": "SHIP_UNITS",
+    "isTemplate": false,
+    "domainName": "RSK",
+    "otmVersion": "6.0",
+    "sourceLocationGid": [
+        "RSK.VOGTEN STAAL-NL-6222-MAASTRICHT"
+    ],
+    "equipmentGroupGid": "",
+    "orderReleaseXid": "INT-20240418-0001",
+    "refnums": {
+        "items": [
+            {
+                "orderReleaseRefnumQualGid": "RSK.LOADING_REFERENCE",
+                "orderReleaseRefnumValue": 1100
+            },
+            {
+                "orderReleaseRefnumQualGid": "RSK.UNLOADING_REFERENCE",
+                "orderReleaseRefnumValue": 1140
+            },
+            {
+                "orderReleaseRefnumQualGid": "RSK.CUST ORDER NUMBER",
+                "orderReleaseRefnumValue": 9191919
+            }
+        ]
+    },
+    "remarks": {
+        "items": [
+            {
+                "remarkQualGid": "RSK.LOAD_UNLOADING_INFORMATION",
+                "remarkText": "FROM BOTH SIDES AND THE TOP LOADING AND UNLOADING"
+            },
+            {
+                "remarkQualGid": "RSK.LICENSE_PLATE",
+                "remarkText": "No"
+            },
+            {
+                "remarkQualGid": "RSK.PALLET_EXCHANGE",
+                "remarkText": "Yes"
+            }
+        ]
+    },
+    "invParties": {
+        "items": [
+            {
+                "involvedPartyQualGid": "BILL-TO",
+                "involvedPartyContactGid": "RSK.50187"
+            },
+            {
+                "involvedPartyQualGid": "RSK.CUSTOMER-OPS",
+                "involvedPartyContactGid": "RSK.DAAN-MATHEEUWSEN"
+            }
+        ]
+    },
+    "shipUnits": {
+        "items": [
+            {
+                "shipUnitXid": "INT-20240418-0001-0001",
+                "transportHandlingUnitGid": "RSK.FTL",
+                "unitWidth": {
+                    "value": 0.8,
+                    "unit": "M"
+                },
+                "unitLength": {
+                    "value": 1.2,
+                    "unit": "M"
+                },
+                "attribute1": "",
+                "shipUnitCount": 3,
+                "unitWeight": {
+                    "value": 1200,
+                    "unit": "KG"
+                },
+                "flexCommodityCode": "RSK.FTL",
+                "unitHeight": {
+                    "value": 2.3,
+                    "unit": "M"
+                },
+                "lines": {
+                    "items": [
+                        {
+                            "shipUnitLineNo": 1,
+                            "orderReleaseLineGid": "RSK.160035"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
